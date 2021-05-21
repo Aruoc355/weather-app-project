@@ -1,0 +1,141 @@
+h1 {
+  padding: 10px;
+  margin: 20px;
+}
+
+h3 {
+  display: block;
+  padding: 5px;
+  margin: 0 auto;
+  width: 400px;
+  transition: all 2ms ease-in-out;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+  list-style-type: none;
+}
+li {
+  text-align: center;
+  font-weight: 600;
+}
+h3:hover {
+  background-color: #93c0b6;
+  color: darkslategrey;
+}
+.container {
+  background-color: honeydew;
+}
+
+.weather-app {
+  font-family: "Mukta", sans-serif;
+  font-weight: 400;
+  padding: 20px;
+  margin: 0 auto;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(253, 239, 132) 0%,
+    rgb(247, 198, 169) 54.2%,
+    rgb(21, 186, 196) 100.3%
+  );
+
+  border-radius: 20px;
+  max-width: 630px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.weather-card {
+  width: 400px;
+  max-height: 200px;
+  margin: 60px 0px;
+  border-radius: 20px;
+  padding-right: 100px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 2ms ease-in-out;
+}
+.weather-card:hover {
+  background-color: #ec7263;
+  color: darkslategrey;
+}
+.temperature {
+  font-size: 38px;
+  display: inline;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.temperature-card {
+  position: relative;
+  height: 170px;
+  border-radius: 40px;
+  margin-top: 60px;
+  margin-left: 100px;
+  width: 200px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 2ms ease-in-out;
+}
+.temperature-card:hover {
+  background-color: #ec7263;
+  color: darkslategrey;
+}
+
+.forecast {
+  padding: 20px;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  font-family: "Mukta", sans-serif;
+}
+
+#current-location {
+  position: relative;
+  margin-right: 25px;
+  margin-left: -30px;
+  height: 38px;
+  width: 76px;
+  font-size: 11px;
+  font-weight: bolder;
+  background-color: antiquewhite;
+  border: none;
+  color: #6d757d;
+}
+
+#sun-cloud-icon {
+  font-size: 70px;
+  color: darkslategrey;
+}
+#sun-rain-icon {
+  font-size: 70px;
+}
+#sun-icon {
+  font-size: 70px;
+  color: orangered;
+}
+#termometer-icon {
+  position: relative;
+  display: block;
+  margin: 20px;
+  font-size: 25px;
+}
+#celsius-symbol,
+#fahrenheit-symbol {
+  text-decoration: none;
+  color: rgb(33, 37, 41);
+  position: relative;
+
+  margin-bottom: 30px;
+  line-height: 0;
+}
+#celsius-symbol:hover,
+#fahrenheit-symbol:hover {
+  text-decoration: underline;
+  color: darkslategrey;
+}
+#definition {
+  margin-left: 10px;
+  text-transform: capitalize;
+}
