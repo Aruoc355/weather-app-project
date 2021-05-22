@@ -7,13 +7,13 @@ function showWeatherAtLocation(response) {
   let feelsLike = document.querySelector("#feels-like");
   let feelsResult = Math.round(response.data.main.feels_like);
   let windResult = Math.round(response.data.wind.speed);
-  let cityResult = response.data.name;
+
   let weatherDescrip = response.data.weather[0].description;
-  let temperatureAtLocation = Math.round(response.data.main.temp);
+
   let humAtLocation = response.data.main.humidity;
-  h1.innerHTML = cityResult;
+  h1.innerHTML = response.data.name;
   definition.innerHTML = `${weatherDescrip} ,`;
-  localTemp.innerHTML = temperatureAtLocation;
+  localTemp.innerHTML = Math.round(response.data.main.temp);
   humidity.innerHTML = `Humidity: ${humAtLocation}%`;
   wind.innerHTML = `Wind: ${windResult}Km/h`;
   feelsLike.innerHTML = `Feels like: ${feelsResult} °C`;
@@ -41,17 +41,17 @@ function displayTemp(response) {
   let humidity = document.querySelector("#humidity-indicator");
   let wind = document.querySelector("#wind");
   let feelsLike = document.querySelector("#feels-like");
-  let newCity = response.data.name;
+
   let newHumidity = Math.round(response.data.main.humidity);
   let windSpeed = Math.round(response.data.wind.speed);
   let newFeelsLike = Math.round(response.data.main.feels_like);
-  let temp = Math.round(response.data.main.temp);
+
   let weatherDef = response.data.weather[0].description;
-  cityName.innerHTML = `${newCity}`;
+  cityName.innerHTML = response.data.name;
   humidity.innerHTML = `Humidity: ${newHumidity}%`;
   wind.innerHTML = `Wind: ${windSpeed} Km/h`;
   feelsLike.innerHTML = `Feels like: ${newFeelsLike}°C`;
-  localTemp.innerHTML = temp;
+  localTemp.innerHTML = Math.round(response.data.main.temp);
   definition.innerHTML = `${weatherDef}, `;
 }
 
