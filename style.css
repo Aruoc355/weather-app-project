@@ -26,7 +26,9 @@ h3:hover {
   color: darkslategrey;
 }
 .container {
-  background-color: honeydew;
+  background: url("pexels-ian-turnell-709552.jpg");
+  border-radius: 20px;
+  margin: 30px;
 }
 
 .weather-app {
@@ -34,11 +36,11 @@ h3:hover {
   font-weight: 400;
   padding: 20px;
   margin: 0 auto;
+  margin-top: 15px;
   background: radial-gradient(
     circle at 10% 20%,
-    rgb(253, 239, 132) 0%,
-    rgb(247, 198, 169) 54.2%,
-    rgb(21, 186, 196) 100.3%
+    rgb(116, 203, 199) 0%,
+    rgb(220, 246, 200) 90%
   );
 
   border-radius: 20px;
@@ -86,9 +88,13 @@ h3:hover {
 }
 
 .footer {
-  padding: 20px;
+  padding: 5px;
   text-align: center;
   font-family: "Mukta", sans-serif;
+  background-color: #dbf6c7;
+  color: black;
+  margin: 20px 80px 0 80px;
+  border-radius: 20px 0 20px 0;
 }
 
 #current-location {
