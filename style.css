@@ -39,12 +39,13 @@ h3:hover {
   margin-top: 15px;
   background: radial-gradient(
     circle at 10% 20%,
-    rgb(116, 203, 199) 0%,
-    rgb(220, 246, 200) 90%
+    rgba(116, 203, 199, 0.4) 0%,
+    rgba(220, 246, 200, 0.6) 90%
   );
+  color: #fff;
 
   border-radius: 20px;
-  max-width: 630px;
+  max-width: 600px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 .weather-card {
@@ -130,7 +131,7 @@ h3:hover {
 #celsius-symbol,
 #fahrenheit-symbol {
   text-decoration: none;
-  color: rgb(33, 37, 41);
+  color: #fff;
   position: relative;
 
   margin-bottom: 30px;
