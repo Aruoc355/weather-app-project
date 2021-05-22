@@ -92,10 +92,15 @@ h3:hover {
   padding: 5px;
   text-align: center;
   font-family: "Mukta", sans-serif;
-  background-color: #dbf6c7;
-  color: black;
+  background-color: rgba(116, 203, 199, 0.6);
+  color: #fff;
   margin: 20px 80px 0 80px;
   border-radius: 20px 0 20px 0;
+}
+.name,
+.github,
+.host {
+  color: #fff;
 }
 
 #current-location {
