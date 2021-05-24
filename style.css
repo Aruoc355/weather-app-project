@@ -39,27 +39,17 @@ h3:hover {
   margin-top: 15px;
   background: radial-gradient(
     circle at 10% 20%,
-    rgba(116, 203, 199, 0.4) 0%,
+    rgba(116, 203, 199, 0.5) 0%,
     rgba(220, 246, 200, 0.6) 90%
   );
-  color: #fff;
-
+  color: antiquewhite;
   border-radius: 20px;
   max-width: 600px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
-.weather-card {
-  width: 400px;
-  max-height: 200px;
-  margin: 60px 0px;
-  border-radius: 20px;
-  padding-right: 100px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  transition: all 2ms ease-in-out;
-}
-.weather-card:hover {
-  background-color: #ec7263;
-  color: darkslategrey;
+
+#first {
+  margin-top: 35px;
 }
 .temperature {
   font-size: 38px;
@@ -67,21 +57,6 @@ h3:hover {
   font-weight: 500;
   position: relative;
   margin-bottom: 0;
-}
-
-.temperature-card {
-  position: relative;
-  height: 170px;
-  border-radius: 40px;
-  margin-top: 60px;
-  margin-left: 100px;
-  width: 200px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  transition: all 2ms ease-in-out;
-}
-.temperature-card:hover {
-  background-color: #ec7263;
-  color: darkslategrey;
 }
 
 .forecast {
@@ -93,7 +68,7 @@ h3:hover {
   text-align: center;
   font-family: "Mukta", sans-serif;
   background-color: rgba(116, 203, 199, 0.6);
-  color: #fff;
+  color: antiquewhite;
   margin: 20px 80px 0 80px;
   border-radius: 20px 0 20px 0;
 }

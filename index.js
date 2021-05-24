@@ -122,4 +122,15 @@ let dayTime = document.querySelector("#current-time");
 
 dayTime.innerHTML = getCurrentTime();
 
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let localTemp = document.querySelector("#temperature");
+  localTemp.innerHTML = 66;
+}
+let fahrenheit = document.querySelector("#fahrenheit-symbol");
+fahrenheit.addEventListener("click", convertToFahrenheit);
+
+//let celsius = document.querySelector("#celsius-symbol");
+//celsius.addEventListener("click", convertToCelsius);
+
 search("Naples");
