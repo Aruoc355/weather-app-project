@@ -41,12 +41,17 @@ function displayTemp(response) {
   let humidity = document.querySelector("#humidity-indicator");
   let wind = document.querySelector("#wind");
   let feelsLike = document.querySelector("#feels-like");
+  let icon = document.querySelector("#changing-icon");
 
   let newHumidity = Math.round(response.data.main.humidity);
   let windSpeed = Math.round(response.data.wind.speed);
   let newFeelsLike = Math.round(response.data.main.feels_like);
 
   let weatherDef = response.data.weather[0].description;
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   cityName.innerHTML = response.data.name;
   humidity.innerHTML = `Humidity: ${newHumidity}%`;
   wind.innerHTML = `Wind: ${windSpeed} Km/h`;
