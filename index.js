@@ -142,16 +142,14 @@ fahrenheit.addEventListener("click", convertToFahrenheit);
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let fahrenheitUpdatedTemp = document.querySelector("#temperature");
-  let celsiusTemp = Math.round(((fahrenheitTemperature - 32) * 5) / 9);
+  let updatedTemp = document.querySelector("#temperature");
 
-  fahrenheitUpdatedTemp.innerHTML = celsiusTemp;
+  updatedTemp.innerHTML = celsiusTemperature;
 }
 
 let celsius = document.querySelector("#celsius-symbol");
 celsius.addEventListener("click", convertToCelsius);
 
 let celsiusTemperature = null;
-let fahrenheitTemperature = null;
 
 search("Naples");
