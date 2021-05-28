@@ -42,6 +42,8 @@ function displayTemp(response) {
   let wind = document.querySelector("#wind");
   let feelsLike = document.querySelector("#feels-like");
   let icon = document.querySelector("#changing-icon");
+  celsiusTemperature = Math.round(response.data.main.temp);
+  fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
 
   let newHumidity = Math.round(response.data.main.humidity);
   let windSpeed = Math.round(response.data.wind.speed);
@@ -130,12 +132,26 @@ dayTime.innerHTML = getCurrentTime();
 function convertToFahrenheit(event) {
   event.preventDefault();
   let localTemp = document.querySelector("#temperature");
-  localTemp.innerHTML = 66;
+  let fahrenheitTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
+
+  localTemp.innerHTML = fahrenheitTemp;
 }
+
 let fahrenheit = document.querySelector("#fahrenheit-symbol");
 fahrenheit.addEventListener("click", convertToFahrenheit);
 
-//let celsius = document.querySelector("#celsius-symbol");
-//celsius.addEventListener("click", convertToCelsius);
+function convertToCelsius(event) {
+  event.preventDefault();
+  let fahrenheitUpdatedTemp = document.querySelector("#temperature");
+  let celsiusTemp = Math.round(((fahrenheitTemperature - 32) * 5) / 9);
+
+  fahrenheitUpdatedTemp.innerHTML = celsiusTemp;
+}
+
+let celsius = document.querySelector("#celsius-symbol");
+celsius.addEventListener("click", convertToCelsius);
+
+let celsiusTemperature = null;
+let fahrenheitTemperature = null;
 
 search("Naples");
