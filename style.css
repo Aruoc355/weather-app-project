@@ -59,6 +59,16 @@ h3:hover {
   position: relative;
   margin-bottom: 0;
 }
+.active {
+  color: antiquewhite;
+  text-decoration: none;
+  cursor: default;
+}
+.active:hover {
+  color: antiquewhite;
+  text-decoration: none;
+  cursor: default;
+}
 
 .forecast {
   padding: 20px;
@@ -78,7 +88,15 @@ h3:hover {
 .host {
   color: #fff;
 }
-
+.active {
+  color: antiquewhite;
+  text-decoration: none;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+  cursor: default;
+}
 #current-location {
   position: relative;
   margin-right: 25px;
@@ -118,21 +136,11 @@ h3:hover {
   float: right;
   margin-left: 60px;
 }
-
-#celsius-symbol,
-#fahrenheit-symbol {
-  text-decoration: none;
+#fahrenheit-symbol,
+#celsius-symbol {
   color: antiquewhite;
-  position: relative;
+}
 
-  margin-bottom: 30px;
-  line-height: 0;
-}
-#celsius-symbol:hover,
-#fahrenheit-symbol:hover {
-  text-decoration: underline;
-  color: darkslategrey;
-}
 #definition {
   margin-left: 10px;
   text-transform: capitalize;

@@ -131,6 +131,8 @@ dayTime.innerHTML = getCurrentTime();
 
 function convertToFahrenheit(event) {
   event.preventDefault();
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
   let localTemp = document.querySelector("#temperature");
   let fahrenheitTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
 
@@ -142,6 +144,8 @@ fahrenheit.addEventListener("click", convertToFahrenheit);
 
 function convertToCelsius(event) {
   event.preventDefault();
+  fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
   let updatedTemp = document.querySelector("#temperature");
 
   updatedTemp.innerHTML = celsiusTemperature;
