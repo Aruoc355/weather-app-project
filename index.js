@@ -112,7 +112,7 @@ function getCurrentTime(Date) {
   let date = now.getDate();
   let month = months[now.getMonth()];
 
-  let updatedTime = `${day}, ${date} ${month}, ${hour}:${minutes}-`;
+  let updatedTime = `${day}, ${date} ${month}, ${hour}:${minutes}`;
   return updatedTime;
 }
 

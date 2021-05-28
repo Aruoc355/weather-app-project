@@ -1,6 +1,7 @@
 h1 {
   padding: 10px;
   margin: 20px;
+  font-size: 56px;
 }
 
 h3 {
@@ -52,7 +53,7 @@ h3:hover {
   margin-top: 35px;
 }
 .temperature {
-  font-size: 38px;
+  font-size: 40px;
   display: inline;
   font-weight: 500;
   position: relative;
@@ -94,6 +95,8 @@ h3:hover {
 #sun-cloud-icon {
   font-size: 70px;
   color: darkslategrey;
+  margin-right: 15px;
+  float: left;
 }
 #sun-rain-icon {
   font-size: 70px;
@@ -107,11 +110,19 @@ h3:hover {
   display: block;
   margin: 20px;
   font-size: 25px;
+  float: right;
 }
+#humidity-indicator,
+#wind,
+#feels-like {
+  float: right;
+  margin-left: 60px;
+}
+
 #celsius-symbol,
 #fahrenheit-symbol {
   text-decoration: none;
-  color: #fff;
+  color: antiquewhite;
   position: relative;
 
   margin-bottom: 30px;
