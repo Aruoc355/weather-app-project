@@ -99,19 +99,6 @@ h3:hover {
   color: #6d757d;
 }
 
-#sun-cloud-icon {
-  font-size: 70px;
-  color: darkslategrey;
-  margin-right: 15px;
-  float: left;
-}
-#sun-rain-icon {
-  font-size: 70px;
-}
-#sun-icon {
-  font-size: 70px;
-  color: orangered;
-}
 #termometer-icon {
   position: relative;
   display: block;
