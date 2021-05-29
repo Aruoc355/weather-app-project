@@ -34,6 +34,45 @@ function getMyPosition(event) {
 let myLocation = document.querySelector("#current-location");
 myLocation.addEventListener("click", getMyPosition);
 
+function displayForecast(response) {
+  console.log(response.data.daily);
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+  let forecastHTML = ` <div class="row"> `;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="forecast-date">${day}</div>
+        <img
+          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+          alt="icon"
+          width="45"
+        />
+        <div class="forecast-temperature">
+          <span class="forecast-max">22°/</span>
+          <span class="forecast-min">15°</span>
+        </div>
+      </div>
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "86795cd1e54d46ec82adad776beccce9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemp(response) {
   let cityName = document.querySelector("h1");
   let localTemp = document.querySelector("#temperature");
@@ -60,6 +99,8 @@ function displayTemp(response) {
   feelsLike.innerHTML = `Feels like: ${newFeelsLike}°C`;
   localTemp.innerHTML = Math.round(response.data.main.temp);
   definition.innerHTML = `${weatherDef}, `;
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -155,37 +196,5 @@ let celsius = document.querySelector("#celsius-symbol");
 celsius.addEventListener("click", convertToCelsius);
 
 let celsiusTemperature = null;
-
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-
-  let forecastHTML = ` <div class="row"> `;
-
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-      <div class="col-2">
-        <div class="forecast-date">${day}</div>
-        <img
-          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-          alt="icon"
-          width="45"
-        />
-        <div class="forecast-temperature">
-          <span class="forecast-max">22°/</span>
-          <span class="forecast-min">15°</span>
-        </div>
-      </div>
-      `;
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
-
-displayForecast();
 
 search("Naples");
