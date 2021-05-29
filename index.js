@@ -156,4 +156,36 @@ celsius.addEventListener("click", convertToCelsius);
 
 let celsiusTemperature = null;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
+  let forecastHTML = ` <div class="row"> `;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="forecast-date">${day}</div>
+        <img
+          src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+          alt="icon"
+          width="45"
+        />
+        <div class="forecast-temperature">
+          <span class="forecast-max">22°/</span>
+          <span class="forecast-min">15°</span>
+        </div>
+      </div>
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
+
 search("Naples");

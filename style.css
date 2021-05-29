@@ -30,6 +30,7 @@ h3:hover {
   background: url("pexels-ian-turnell-709552.jpg");
   border-radius: 20px;
   margin: 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .weather-app {
@@ -37,7 +38,7 @@ h3:hover {
   font-weight: 400;
   padding: 20px;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 25px;
   background: linear-gradient(
     180.5deg,
     rgba(0, 128, 128, 0.6) 8.5%,
@@ -46,12 +47,13 @@ h3:hover {
   color: antiquewhite;
   border-radius: 20px;
   max-width: 600px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 10px rgba(0.5, 0.5, 0, 0.3);
 }
 
 #first {
   margin-top: 35px;
 }
+
 .temperature {
   font-size: 40px;
   display: inline;
