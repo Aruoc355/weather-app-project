@@ -1,39 +1,3 @@
-function showWeatherAtLocation(response) {
-  let h1 = document.querySelector("h1");
-  let definition = document.querySelector("#definition");
-  let localTemp = document.querySelector("#temperature");
-  let humidity = document.querySelector("#humidity-indicator");
-  let wind = document.querySelector("#wind");
-  let feelsLike = document.querySelector("#feels-like");
-  let feelsResult = Math.round(response.data.main.feels_like);
-  let windResult = Math.round(response.data.wind.speed);
-
-  let weatherDescrip = response.data.weather[0].description;
-
-  let humAtLocation = response.data.main.humidity;
-  h1.innerHTML = response.data.name;
-  definition.innerHTML = `${weatherDescrip} ,`;
-  localTemp.innerHTML = Math.round(response.data.main.temp);
-  humidity.innerHTML = `Humidity: ${humAtLocation}%`;
-  wind.innerHTML = `Wind: ${windResult}Km/h`;
-  feelsLike.innerHTML = `Feels like: ${feelsResult} °C`;
-}
-
-function getPosition(position) {
-  let yourLat = Math.round(position.coords.latitude);
-  let yourLon = Math.round(position.coords.longitude);
-  let apiKey = "86795cd1e54d46ec82adad776beccce9";
-  let locationUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${yourLat}&lon=${yourLon}&appid=${apiKey}&units=metric`;
-  axios.get(locationUrl).then(showWeatherAtLocation);
-}
-
-function getMyPosition(event) {
-  navigator.geolocation.getCurrentPosition(getPosition);
-}
-
-let myLocation = document.querySelector("#current-location");
-myLocation.addEventListener("click", getMyPosition);
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -189,5 +153,42 @@ getCurrentTime();
 let dayTime = document.querySelector("#current-time");
 
 dayTime.innerHTML = getCurrentTime();
+
+function showWeatherAtLocation(response) {
+  let h1 = document.querySelector("h1");
+  let definition = document.querySelector("#definition");
+  let localTemp = document.querySelector("#temperature");
+  let humidity = document.querySelector("#humidity-indicator");
+  let wind = document.querySelector("#wind");
+  let feelsLike = document.querySelector("#feels-like");
+  let feelsResult = Math.round(response.data.main.feels_like);
+  let windResult = Math.round(response.data.wind.speed);
+  let weatherDescrip = response.data.weather[0].description;
+
+  let humAtLocation = response.data.main.humidity;
+  h1.innerHTML = response.data.name;
+  definition.innerHTML = `${weatherDescrip} ,`;
+  localTemp.innerHTML = Math.round(response.data.main.temp);
+  humidity.innerHTML = `Humidity: ${humAtLocation}%`;
+  wind.innerHTML = `Wind: ${windResult}Km/h`;
+  feelsLike.innerHTML = `Feels like: ${feelsResult} °C`;
+
+  getForecast(response.data.coord);
+}
+
+function getPosition(position) {
+  let yourLat = Math.round(position.coords.latitude);
+  let yourLon = Math.round(position.coords.longitude);
+  let apiKey = "86795cd1e54d46ec82adad776beccce9";
+  let locationUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${yourLat}&lon=${yourLon}&appid=${apiKey}&units=metric`;
+  axios.get(locationUrl).then(showWeatherAtLocation);
+}
+
+function getMyPosition(event) {
+  navigator.geolocation.getCurrentPosition(getPosition);
+}
+
+let myLocation = document.querySelector("#current-location");
+myLocation.addEventListener("click", getMyPosition);
 
 search("Naples");
